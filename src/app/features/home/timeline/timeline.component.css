@@ -1,0 +1,14 @@
+.timeline{position:relative; max-width:780px; margin:0 auto;}
+.timeline::before{content:""; position:absolute; left:50%; top:0; bottom:0; width:1px; background:var(--line-2); transform:translateX(-50%);}
+@media (max-width:760px){.timeline::before{left:24px;}}
+.t-item{display:grid; grid-template-columns:1fr 60px 1fr; gap:0; align-items:center; margin-bottom:56px; position:relative;}
+@media (max-width:760px){.t-item{grid-template-columns:60px 1fr; padding-left:0;}}
+@media (max-width:760px){.t-item .t-card{grid-column:2 !important; text-align:left !important;}}
+.t-dot{
+  grid-column:2; width:54px; height:54px; border-radius:50%; background:var(--ink-2); border:1px solid var(--line-2);
+  display:flex; align-items:center; justify-content:center; font-family:var(--mono); font-size:13px; color:var(--cyan); position:relative; z-index:2;
+}
+@media (max-width:760px){.t-dot{grid-column:1; width:48px; height:48px;}}
+.t-card{padding:24px 28px;}
+.t-card h4{font-size:18px; margin-bottom:8px;}
+.t-card p{font-size:13.5px; color:var(--muted);}

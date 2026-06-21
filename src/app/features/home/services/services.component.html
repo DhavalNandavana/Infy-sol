@@ -1,0 +1,14 @@
+<section class="section" id="services" style="background:var(--ink-2);">
+  <div class="wrap">
+    <div class="section-head center" appReveal>
+      <div class="eyebrow" style="margin:0 auto 18px; justify-content:center;">What We Do</div>
+      <h2>Our Services</h2>
+      <p>A full suite of creative and growth services built to give your brand a unified, unforgettable presence.</p>
+    </div>
+    <div class="services-grid">
+      @for (service of services; track service.id; let i = $index) {
+        <app-service-card [service]="service" [index]="i" />
+      }
+    </div>
+  </div>
+</section>

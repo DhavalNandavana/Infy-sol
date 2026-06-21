@@ -1,0 +1,22 @@
+<div class="menu-overlay" [class.open]="menuOpen()" (click)="closeMenu()"></div>
+
+<header id="site-header" [class.scrolled]="isScrolled()">
+  <div class="wrap nav-row">
+    <a (click)="navigate('home')" class="brand" style="cursor:pointer;">
+      <img src="assets/White.png" alt="Infynex Solutions Logo" class="brand-logo" />
+    </a>
+    <nav class="main-menu" [class.open]="menuOpen()">
+      <a href="#home" (click)="$event.preventDefault(); navigate('home')">Home</a>
+      <a href="#about" (click)="$event.preventDefault(); navigate('about')">About</a>
+      <a href="#services" (click)="$event.preventDefault(); navigate('services')">Services</a>
+      <a href="#portfolio" (click)="$event.preventDefault(); navigate('portfolio')">Portfolio</a>
+      <a href="#testimonials" (click)="$event.preventDefault(); navigate('testimonials')">Testimonials</a>
+      <a href="#blog" (click)="$event.preventDefault(); navigate('blog')">Blog</a>
+      
+    </nav>
+    <div class="nav-cta">
+      <a href="#contact" (click)="$event.preventDefault(); navigate('contact')" class="btn btn-primary" appMagnetic style="cursor:pointer;" aria-label="Contact Us">Contact</a>
+      <button id="menu-toggle" aria-label="Menu" (click)="toggleMenu()"><span></span></button>
+    </div>
+  </div>
+</header>

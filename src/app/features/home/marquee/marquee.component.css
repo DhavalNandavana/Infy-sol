@@ -1,0 +1,4 @@
+.marquee-wrap{overflow:hidden; padding:50px 0; border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+.marquee-track{display:flex; gap:64px; width:max-content; animation:marquee 32s linear infinite;}
+@keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+.marquee-track span{font-family:var(--display); font-weight:700; font-size:24px; color:var(--muted-2); white-space:nowrap; letter-spacing:.02em;}

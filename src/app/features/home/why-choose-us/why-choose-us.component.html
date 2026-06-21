@@ -1,0 +1,17 @@
+<section class="section" id="why">
+  <div class="wrap">
+    <div class="section-head center" appReveal>
+      <div class="eyebrow" style="margin:0 auto 18px; justify-content:center;">Why Infynex</div>
+      <h2>Why Choose Us</h2>
+    </div>
+    <div class="why-grid" appReveal>
+      @for (item of items; track item.id) {
+        <div class="why-item">
+          <div class="s-icon" [innerHTML]="safeIcon(item)"></div>
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.description }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>

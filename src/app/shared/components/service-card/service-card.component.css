@@ -1,0 +1,17 @@
+.s-card{
+  padding:32px 26px; position:relative; overflow:hidden; transition:transform .4s var(--ease), border-color .4s ease;
+}
+.s-card::before{
+  content:""; position:absolute; inset:0; opacity:0; background:radial-gradient(circle at var(--mx,50%) var(--my,50%), rgba(13,204,250,.16), transparent 60%);
+  transition:opacity .35s ease;
+}
+.s-card:hover::before{opacity:1;}
+.s-card:hover{transform:translateY(-8px); border-color:rgba(13,204,250,.4);}
+.s-icon{
+  width:52px; height:52px; border-radius:14px; background:var(--grad-soft); border:1px solid var(--line-2);
+  display:flex; align-items:center; justify-content:center; margin-bottom:22px;
+}
+:host ::ng-deep .s-icon svg{width:24px; height:24px; stroke:var(--cyan);}
+.s-card h3{font-size:18px; margin-bottom:10px;}
+.s-card p{font-size:13.5px; color:var(--muted);}
+.s-num{position:absolute; top:24px; right:26px; font-family:var(--mono); font-size:11px; color:var(--muted-2);}

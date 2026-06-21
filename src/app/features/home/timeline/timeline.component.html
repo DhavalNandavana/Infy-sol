@@ -1,0 +1,33 @@
+<section class="section">
+  <div class="wrap">
+    <div class="section-head center" appReveal>
+      <div class="eyebrow" style="margin:0 auto 18px; justify-content:center;">How We Work</div>
+      <h2>Our Creative Process</h2>
+    </div>
+    <div class="timeline">
+      @for (step of steps; track step.id) {
+        <div class="t-item" appReveal>
+          @if (step.id % 2 !== 0) {
+            <div class="t-card glass" style="grid-column:1; text-align:right;">
+              <h4>{{ step.title }}</h4>
+              <p>{{ step.description }}</p>
+            </div>
+          }
+          <div class="t-dot" [style.grid-column]="2">{{ step.num }}</div>
+          @if (step.id % 2 === 0) {
+            <div class="t-card glass" style="grid-column:3;">
+              <h4>{{ step.title }}</h4>
+              <p>{{ step.description }}</p>
+            </div>
+          }
+          @if (step.id % 2 !== 0) {
+            <div style="grid-column:3;"></div>
+          }
+          @if (step.id % 2 === 0) {
+            <!-- empty first column for even rows handled by grid -->
+          }
+        </div>
+      }
+    </div>
+  </div>
+</section>

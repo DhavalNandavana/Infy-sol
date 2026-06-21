@@ -1,0 +1,29 @@
+<section class="section" id="portfolio">
+  <div class="wrap">
+    <div class="section-head" appReveal>
+      <div class="eyebrow">Selected Work</div>
+      <h2>Our Creative Works</h2>
+      <p>A curated look at branding, packaging, and digital projects we've shipped for clients across industries.</p>
+    </div>
+    <div class="filter-row" appReveal>
+      @for (cat of categories; track cat) {
+        <button class="filter-btn" [class.active]="activeFilter() === cat" (click)="setFilter(cat)">{{ cat === 'all' ? 'All' : cat }}</button>
+      }
+    </div>
+    <div class="masonry">
+      @for (item of filteredItems(); track item.id) {
+        <div class="p-item" (click)="openModal(item)">
+          <div class="p-thumb">
+            <div class="swatch" [style.height]="getHeightClass(item.height)" [style.background]="item.gradient"></div>
+            <div class="p-overlay">
+              <span class="p-cat">{{ item.category }}</span>
+              <span class="p-title">{{ item.title }}</span>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<app-portfolio-modal [item]="selectedItem()" (close)="closeModal()" />

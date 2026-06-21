@@ -1,0 +1,12 @@
+.why-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:2px; background:var(--line); border:1px solid var(--line); border-radius:24px; overflow:hidden;}
+@media (max-width:900px){.why-grid{grid-template-columns:repeat(2,1fr);}}
+@media (max-width:560px){.why-grid{grid-template-columns:1fr;}}
+.why-item{background:var(--ink-2); padding:42px 32px; transition:background .35s ease;}
+.why-item:hover{background:var(--panel-2);}
+.why-item .s-icon{
+  width:52px; height:52px; border-radius:14px; background:var(--grad-soft); border:1px solid var(--line-2);
+  display:flex; align-items:center; justify-content:center; margin-bottom:24px;
+}
+:host ::ng-deep .s-icon svg{width:24px; height:24px; stroke:var(--cyan);}
+.why-item h3{font-size:17px; margin-bottom:10px;}
+.why-item p{font-size:13.5px; color:var(--muted);}

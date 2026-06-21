@@ -1,0 +1,14 @@
+<section class="section" id="blog">
+  <div class="wrap">
+    <div class="section-head" appReveal>
+      <div class="eyebrow">Insights</div>
+      <h2>Latest Design Insights</h2>
+      <p>Notes on design, branding, and growth from the Infynex creative desk.</p>
+    </div>
+    <div class="blog-grid">
+      @for (blog of blogs; track blog.id) {
+        <app-blog-card [blog]="blog" />
+      }
+    </div>
+  </div>
+</section>

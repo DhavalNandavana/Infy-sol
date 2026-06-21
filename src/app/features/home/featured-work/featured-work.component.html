@@ -1,0 +1,27 @@
+<section class="section" style="background:var(--ink-2);">
+  <div class="wrap">
+    <div class="section-head" appReveal>
+      <div class="eyebrow">Featured Work</div>
+      <h2>Spotlight Projects</h2>
+    </div>
+    <div class="feature-strip">
+      @for (feature of features; track feature.id) {
+        <div class="feature-row" appReveal>
+          <div class="feature-visual" [style.background]="feature.gradient">
+            <div class="layer"></div>
+          </div>
+          <div class="feature-info">
+            <div class="feature-num">{{ feature.num }}</div>
+            <h3>{{ feature.title }}</h3>
+            <p>{{ feature.description }}</p>
+            <div class="feature-tags">
+              @for (tag of feature.tags; track tag) {
+                <span>{{ tag }}</span>
+              }
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

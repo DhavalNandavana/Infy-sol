@@ -1,0 +1,11 @@
+<section class="video-section" appReveal>
+  <div class="video-bg"></div>
+  <div class="video-content">
+    <button class="play-btn" (click)="openVideo()">
+      <svg viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
+    </button>
+    <h2>See How We Transform Brands Through Creative Design</h2>
+  </div>
+</section>
+
+<app-video-modal [isOpen]="videoOpen()" (close)="closeVideo()" />

@@ -1,0 +1,9 @@
+.blog-card{overflow:hidden; transition:transform .4s var(--ease);}
+.blog-card:hover{transform:translateY(-6px);}
+.blog-thumb{height:190px; position:relative;}
+.blog-badge{position:absolute; top:16px; left:16px; font-family:var(--mono); font-size:10.5px; text-transform:uppercase; letter-spacing:.1em; padding:6px 12px; border-radius:100px; background:rgba(6,5,12,.6); border:1px solid var(--line-2); backdrop-filter:blur(6px);}
+.blog-body{padding:26px;}
+.blog-body h3{font-size:17px; margin-bottom:14px; line-height:1.35;}
+.blog-read{display:inline-flex; align-items:center; gap:6px; font-size:13px; color:var(--cyan); font-weight:600;}
+.blog-read svg{width:14px; height:14px; transition:transform .3s ease;}
+.blog-card:hover .blog-read svg{transform:translateX(4px);}

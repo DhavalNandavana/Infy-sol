@@ -1,0 +1,24 @@
+<section class="section" id="testimonials" style="background:var(--ink-2);">
+  <div class="wrap">
+    <div class="section-head center" appReveal>
+      <div class="eyebrow" style="margin:0 auto 18px; justify-content:center;">Testimonials</div>
+      <h2>What Our Clients Say</h2>
+    </div>
+    <div class="testi-wrap" appReveal>
+      <div class="testi-track">
+        <div class="testi-slides" [style.transform]="'translateX(' + translateX() + ')'">
+          @for (t of testimonials; track t.id) {
+            <div class="testi-slide">
+              <app-testimonial-card [testimonial]="t" />
+            </div>
+          }
+        </div>
+      </div>
+      <div class="testi-dots">
+        @for (t of testimonials; track t.id; let i = $index) {
+          <button [class.active]="currentIndex() === i" (click)="goTo(i)"></button>
+        }
+      </div>
+    </div>
+  </div>
+</section>

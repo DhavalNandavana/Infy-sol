@@ -1,0 +1,101 @@
+<section class="section" id="contact">
+  <div class="wrap">
+    <div class="contact-wrap" appReveal>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="eyebrow">Get In Touch</div>
+          <h2>Let's Build Something <span class="gtext">Amazing</span> Together</h2>
+          <p>Tell us about your project — we'll get back to you within 24 hours with a tailored proposal.</p>
+          <div class="c-info-item">
+            <div class="c-info-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div>
+              <b>Email</b>
+              <span>info&#64;infynexsolutions.com</span>
+            </div>
+          </div>
+          <div class="c-info-item">
+            <div class="c-info-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+            </div>
+            <div>
+              <b>Phone</b>
+              <span>+91 9824253581</span>
+            </div>
+          </div>
+          <div class="c-info-item">
+            <div class="c-info-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <b>Location</b>
+              <span>Ahmedabad, India</span>
+            </div>
+          </div>
+          <div class="map-box">
+            <div class="map-pin"></div>
+          </div>
+        </div>
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="form-grid">
+          <div class="field">
+            <input type="text" formControlName="name" placeholder=" " id="name" [class.error]="isInvalid('name')" aria-required="true" autocomplete="name">
+            <label for="name">Your Name</label>
+            @if (isInvalid('name')) {
+              <span class="field-error">Name is required</span>
+            }
+          </div>
+          <div class="field">
+            <input type="email" formControlName="email" placeholder=" " id="email" [class.error]="isInvalid('email')" aria-required="true" autocomplete="email">
+            <label for="email">Email Address</label>
+            @if (isInvalid('email')) {
+              <span class="field-error">Valid email is required</span>
+            }
+          </div>
+          <div class="field">
+            <input type="tel" formControlName="phone" placeholder=" " id="phone" autocomplete="tel">
+            <label for="phone">Phone Number</label>
+          </div>
+          <div class="field">
+            <select formControlName="service" id="service" [class.error]="isInvalid('service')" aria-required="true">
+              <option value="" disabled selected>Select Service</option>
+              <option>Branding & Identity</option>
+              <option>Logo Design</option>
+              <option>Packaging Design</option>
+              <option>Social Media Design</option>
+              <option>SEO Optimization</option>
+              <option>Digital Marketing</option>
+              <option>Motion Graphics</option>
+              <option>Print Design</option>
+            </select>
+            <label for="service">Service Interested In</label>
+            @if (isInvalid('service')) {
+              <span class="field-error">Please select a service</span>
+            }
+          </div>
+          <div class="field full">
+            <textarea formControlName="message" placeholder=" " id="message" [class.error]="isInvalid('message')" aria-required="true"></textarea>
+            <label for="message">Your Message</label>
+            @if (isInvalid('message')) {
+              <span class="field-error">Message must be at least 10 characters</span>
+            }
+          </div>
+          <div class="form-foot">
+            <button type="submit" class="btn btn-primary" [disabled]="loading()">
+              {{ loading() ? 'Sending...' : 'Send Message' }}
+              @if (!loading()) {
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+              }
+            </button>
+            @if (success()) {
+              <div class="form-success show">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                Message sent successfully!
+              </div>
+            }
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
