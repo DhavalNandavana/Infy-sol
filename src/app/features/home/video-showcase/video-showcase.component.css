@@ -1,17 +1,58 @@
-.video-section{position:relative; height:560px; border-radius:0; overflow:hidden; display:flex; align-items:center; justify-content:center; margin:0;}
-.video-bg{position:absolute; inset:0; background:
-  linear-gradient(120deg, rgba(53,28,172,.55), rgba(13,204,250,.35)),
-  repeating-linear-gradient(45deg, rgba(255,255,255,.03) 0 2px, transparent 2px 30px);
-  animation:bgPan 14s linear infinite;
+.video-section {
+  position: relative;
+  min-height: clamp(500px, 60vw, 800px);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
 }
-@keyframes bgPan{0%{background-position:0 0;}100%{background-position:200px 200px;}}
-.video-content{position:relative; z-index:2; text-align:center; max-width:640px; padding:0 24px;}
-.video-content h2{font-size:clamp(28px,4vw,42px); margin-bottom:30px;}
-.play-btn{
-  width:84px; height:84px; border-radius:50%; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.3);
-  display:flex; align-items:center; justify-content:center; margin:0 auto 28px; backdrop-filter:blur(8px);
-  position:relative; cursor:pointer;
+.video-background-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: max(100vw, 177.77vh);
+  height: max(56.25vw, 100vh);
+  pointer-events: none;
+  z-index: 0;
 }
-.play-btn::before{content:""; position:absolute; inset:-14px; border-radius:50%; border:1px solid rgba(255,255,255,.25); animation:ring 2.4s ease-out infinite;}
-@keyframes ring{0%{transform:scale(.8); opacity:1;}100%{transform:scale(1.5); opacity:0;}}
-.play-btn svg{width:26px; height:26px; margin-left:4px;}
+.video-background-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  border: none;
+}
+.video-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(4, 3, 8, 0.55);
+  z-index: 1;
+}
+.video-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: clamp(500px, 65vw, 900px);
+  padding: clamp(40px, 5vw, 80px) clamp(20px, 3vw, 40px);
+}
+.video-content h2 {
+  font-size: clamp(32px, 4.5vw, 64px);
+  margin-bottom: clamp(16px, 2vw, 24px);
+  line-height: 1.2;
+}
+.video-desc {
+  color: var(--muted);
+  font-size: clamp(14px, 1.2vw, 18px);
+  line-height: 1.6;
+  margin-bottom: clamp(30px, 4vw, 50px);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.video-actions {
+  display: flex;
+  gap: clamp(12px, 1.5vw, 20px);
+  justify-content: center;
+  flex-wrap: wrap;
+}

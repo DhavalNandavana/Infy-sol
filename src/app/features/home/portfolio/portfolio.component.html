@@ -1,27 +1,32 @@
 <section class="section" id="portfolio">
   <div class="wrap">
-    <div class="section-head" appReveal>
-      <div class="eyebrow">Selected Work</div>
-      <h2>Our Creative Works</h2>
-      <p>A curated look at branding, packaging, and digital projects we've shipped for clients across industries.</p>
+    <div class="section-head center" appReveal>
+      <div class="eyebrow" style="margin:0 auto 18px; justify-content:center;">Selected Work</div>
+      <h2>Our Masterpieces: Where Vision Meets <span class="gtext">Digital Reality</span></h2>
+      <p style="max-width: clamp(480px, 60vw, 860px); margin: 0 auto;">Dive into a curated collection of our most impactful projects. Each case study and portfolio entry demonstrates our commitment to innovation, strategic thinking, and delivering measurable results. See firsthand how Infynex Solution transforms challenges into success stories, building robust digital ecosystems for our clients</p>
     </div>
-    <div class="filter-row" appReveal>
+    <div class="filter-row" appReveal style="justify-content:center;">
       @for (cat of categories; track cat) {
         <button class="filter-btn" [class.active]="activeFilter() === cat" (click)="setFilter(cat)">{{ cat === 'all' ? 'All' : cat }}</button>
       }
     </div>
-    <div class="masonry">
+    <div class="portfolio-grid">
       @for (item of filteredItems(); track item.id) {
-        <div class="p-item" (click)="openModal(item)">
+        <div class="p-item" (click)="openModal(item)" appReveal>
           <div class="p-thumb">
+            <!-- Inline style for height is overridden by CSS to ensure equal heights as requested -->
             <div class="swatch" [style.height]="getHeightClass(item.height)" [style.background]="item.gradient"></div>
             <div class="p-overlay">
               <span class="p-cat">{{ item.category }}</span>
-              <span class="p-title">{{ item.title }}</span>
+              <h3 class="p-title">{{ item.title }}</h3>
             </div>
           </div>
         </div>
       }
+    </div>
+    <div class="portfolio-actions center" appReveal style="margin-top:clamp(40px, 5vw, 70px); display:flex; justify-content:center; gap:clamp(12px, 1.2vw, 20px); flex-wrap:wrap;">
+      <a href="#portfolio" class="btn btn-primary" appMagnetic>View All Projects</a>
+      <a href="#blog" class="btn btn-ghost" appMagnetic>Read Our Case Studies</a>
     </div>
   </div>
 </section>

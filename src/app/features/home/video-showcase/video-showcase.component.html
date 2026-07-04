@@ -1,11 +1,24 @@
 <section class="video-section" appReveal>
-  <div class="video-bg"></div>
+  <!-- Background Video -->
+  <div class="video-background-wrapper">
+    <iframe 
+      src="https://www.youtube.com/embed/fclAh1VugdU?autoplay=1&mute=1&loop=1&playlist=fclAh1VugdU&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1" 
+      frameborder="0" 
+      allow="autoplay; encrypted-media; gyroscope; picture-in-picture" 
+      tabindex="-1"
+      aria-hidden="true">
+    </iframe>
+  </div>
+  
+  <div class="video-overlay"></div>
+  
+  <!-- Foreground Content -->
   <div class="video-content">
-    <button class="play-btn" (click)="openVideo()">
-      <svg viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
-    </button>
     <h2>See How We Transform Brands Through Creative Design</h2>
+    <p class="video-desc">Discover how Infynex Solution helps businesses build powerful digital ecosystems through innovative branding, website development, creative design, SEO, and digital marketing. Watch our featured video to explore our process, successful projects, and the impact of our digital solutions.</p>
+    <div class="video-actions">
+      <a href="#contact" class="btn btn-primary" appMagnetic>Start Your Project</a>
+      <a href="#portfolio" class="btn btn-ghost" appMagnetic>Explore Our Portfolio</a>
+    </div>
   </div>
 </section>
-
-<app-video-modal [isOpen]="videoOpen()" (close)="closeVideo()" />

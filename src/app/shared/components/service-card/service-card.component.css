@@ -1,17 +1,92 @@
+:host{display:block;}
+
 .s-card{
-  padding:32px 26px; position:relative; overflow:hidden; transition:transform .4s var(--ease), border-color .4s ease;
+  padding:clamp(28px, 2.6vw, 48px) clamp(24px, 2.2vw, 40px);
+  position:relative;
+  overflow:hidden;
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  transition:transform .45s var(--ease), border-color .45s ease, box-shadow .45s ease;
+  will-change:transform;
 }
+
+/* Radial glow follow cursor */
 .s-card::before{
-  content:""; position:absolute; inset:0; opacity:0; background:radial-gradient(circle at var(--mx,50%) var(--my,50%), rgba(13,204,250,.16), transparent 60%);
-  transition:opacity .35s ease;
+  content:""; position:absolute; inset:0; opacity:0;
+  background:radial-gradient(circle at var(--mx,50%) var(--my,50%), rgba(13,204,250,.14), transparent 60%);
+  transition:opacity .4s ease;
 }
 .s-card:hover::before{opacity:1;}
-.s-card:hover{transform:translateY(-8px); border-color:rgba(13,204,250,.4);}
-.s-icon{
-  width:52px; height:52px; border-radius:14px; background:var(--grad-soft); border:1px solid var(--line-2);
-  display:flex; align-items:center; justify-content:center; margin-bottom:22px;
+
+/* Hover lift + glow */
+.s-card:hover{
+  transform:translateY(-10px);
+  border-color:rgba(13,204,250,.45);
+  box-shadow:
+    0 24px 56px -16px rgba(13,204,250,.2),
+    0 0 0 1px rgba(13,204,250,.12) inset;
 }
-:host ::ng-deep .s-icon svg{width:24px; height:24px; stroke:var(--cyan);}
-.s-card h3{font-size:18px; margin-bottom:10px;}
-.s-card p{font-size:13.5px; color:var(--muted);}
-.s-num{position:absolute; top:24px; right:26px; font-family:var(--mono); font-size:11px; color:var(--muted-2);}
+
+/* Icon container */
+.s-icon{
+  width:clamp(48px, 3.8vw, 68px);
+  height:clamp(48px, 3.8vw, 68px);
+  border-radius:clamp(12px, 1.1vw, 18px);
+  background:var(--grad-soft);
+  border:1px solid var(--line-2);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-bottom:clamp(20px, 1.8vw, 30px);
+  transition:transform .4s var(--ease), border-color .4s ease, box-shadow .4s ease;
+  flex-shrink:0;
+}
+
+/* Icon hover scale + glow */
+.s-card:hover .s-icon{
+  transform:scale(1.1);
+  border-color:rgba(13,204,250,.4);
+  box-shadow:0 8px 24px -8px rgba(13,204,250,.3);
+}
+
+/* SVG inside icon */
+:host ::ng-deep .s-icon svg{
+  width:clamp(22px, 1.8vw, 32px);
+  height:clamp(22px, 1.8vw, 32px);
+  stroke:var(--cyan);
+  transition:stroke .3s ease;
+}
+
+/* Title */
+.s-card h3{
+  font-size:clamp(16px, 1.3vw, 23px);
+  margin-bottom:clamp(10px, 0.9vw, 16px);
+  line-height:1.25;
+  transition:color .3s ease;
+}
+.s-card:hover h3{color:var(--cyan);}
+
+/* Description */
+.s-card p{
+  font-size:clamp(13px, 0.95vw, 16px);
+  color:var(--muted);
+  line-height:1.65;
+  flex-grow:1;
+}
+
+/* Card number */
+.s-num{
+  position:absolute;
+  top:clamp(20px, 1.8vw, 32px);
+  right:clamp(22px, 2vw, 36px);
+  font-family:var(--mono);
+  font-size:clamp(11px, 0.8vw, 14px);
+  color:var(--muted-2);
+  opacity:.6;
+  transition:opacity .3s ease, color .3s ease;
+}
+.s-card:hover .s-num{
+  opacity:1;
+  color:var(--cyan);
+}

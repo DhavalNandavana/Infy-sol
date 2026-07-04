@@ -1,14 +1,18 @@
 <section class="section" id="blog">
   <div class="wrap">
-    <div class="section-head" appReveal>
-      <div class="eyebrow">Insights</div>
-      <h2>Latest Design Insights</h2>
-      <p>Notes on design, branding, and growth from the Infynex creative desk.</p>
+    <div class="section-head center" appReveal>
+      <div class="eyebrow" style="margin:0 auto 18px; justify-content:center;">Insights</div>
+      <h2>Insights & Resources: Navigating Your Digital Ecosystem with <span class="gtext">Expertise</span></h2>
+      <p style="max-width: clamp(480px, 60vw, 860px); margin: 0 auto;">In the fast-evolving digital landscape, staying informed is key to success. Our blog is your go-to resource for expert insights, industry trends, and practical advice on building and optimizing Your<strong> Complete Digital Ecosystem. </strong>From the latest in SEO strategies and cutting-edge web development techniques to creative branding tips and effective social media marketing tactics, we share our knowledge to empower your business. Explore our articles, guides, and thought leadership pieces to gain a competitive edge.</p>
     </div>
     <div class="blog-grid">
       @for (blog of blogs; track blog.id) {
         <app-blog-card [blog]="blog" />
       }
+    </div>
+    <div class="blog-actions center" appReveal style="margin-top:clamp(40px, 5vw, 70px); display:flex; justify-content:center; gap:clamp(12px, 1.2vw, 20px); flex-wrap:wrap;">
+      <a href="#blog" class="btn btn-primary" appMagnetic>Read Our Latest Articles</a>
+      <a href="#blog" class="btn btn-ghost" appMagnetic>Subscribe to Our Newsletter</a>
     </div>
   </div>
 </section>

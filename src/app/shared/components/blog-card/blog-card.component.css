@@ -1,9 +1,9 @@
-.blog-card{overflow:hidden; transition:transform .4s var(--ease);}
-.blog-card:hover{transform:translateY(-6px);}
-.blog-thumb{height:190px; position:relative;}
-.blog-badge{position:absolute; top:16px; left:16px; font-family:var(--mono); font-size:10.5px; text-transform:uppercase; letter-spacing:.1em; padding:6px 12px; border-radius:100px; background:rgba(6,5,12,.6); border:1px solid var(--line-2); backdrop-filter:blur(6px);}
-.blog-body{padding:26px;}
-.blog-body h3{font-size:17px; margin-bottom:14px; line-height:1.35;}
-.blog-read{display:inline-flex; align-items:center; gap:6px; font-size:13px; color:var(--cyan); font-weight:600;}
-.blog-read svg{width:14px; height:14px; transition:transform .3s ease;}
+.blog-card{overflow:hidden; transition:transform .4s var(--ease), box-shadow .4s ease; will-change:transform;}
+.blog-card:hover{transform:translateY(-6px); box-shadow:0 20px 50px -16px rgba(13,204,250,.15);}
+.blog-thumb{height:clamp(140px, 14vw, 240px); position:relative; overflow:hidden;}
+.blog-badge{position:absolute; top:clamp(12px, 1.1vw, 20px); left:clamp(12px, 1.1vw, 20px); font-family:var(--mono); font-size:clamp(9.5px, 0.72vw, 12.5px); text-transform:uppercase; letter-spacing:.1em; padding:clamp(5px, 0.45vw, 8px) clamp(9px, 0.85vw, 16px); border-radius:100px; background:rgba(6,5,12,.6); border:1px solid var(--line-2); backdrop-filter:blur(6px);}
+.blog-body{padding:clamp(18px, 2vw, 34px);}
+.blog-body h3{font-size:clamp(14.5px, 1.1vw, 20px); margin-bottom:clamp(10px, 1vw, 18px); line-height:1.35;}
+.blog-read{display:inline-flex; align-items:center; gap:clamp(5px, 0.4vw, 8px); font-size:clamp(11.5px, 0.85vw, 15px); color:var(--cyan); font-weight:600;}
+.blog-read svg{width:clamp(12px, 0.95vw, 16px); height:clamp(12px, 0.95vw, 16px); transition:transform .3s ease;}
 .blog-card:hover .blog-read svg{transform:translateX(4px);}

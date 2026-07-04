@@ -30,7 +30,7 @@ import { SeoService } from './core/services/seo.service';
     <app-whatsapp-float />
   `,
   styles: [`
-    main { position: relative; z-index: 1; }
+    main { position: relative; }
   `]
 })
 export class App implements OnInit, OnDestroy {
