@@ -18,10 +18,14 @@ nav.main-menu a:hover::after{transform:translateX(-50%) scale(1);}
 .nav-cta .btn-primary{padding:clamp(8px, 0.8vw, 14px) clamp(18px, 1.8vw, 32px); font-size:clamp(12px, 0.9vw, 16px); border-radius:100px; font-weight:600; letter-spacing:.02em;}
 #menu-toggle{display:none; width:40px; height:40px; align-items:center; justify-content:center; border:1px solid var(--line-2); border-radius:10px;}
 #menu-toggle span, #menu-toggle span::before, #menu-toggle span::after{
-  content:""; display:block; width:18px; height:1.5px; background:var(--text); position:relative; transition:.3s ease;
+  content:""; display:block; width:18px; height:1.5px; background:#fff; position:relative; transition:.3s ease;
 }
 #menu-toggle span::before{position:absolute; top:-6px;}
 #menu-toggle span::after{position:absolute; top:6px;}
+
+#menu-toggle.open { opacity: 0; pointer-events: none; }
+
+.mobile-close-btn { display: none; }
 
 .menu-overlay{
   position:fixed; inset:0; z-index:999; background:rgba(6,5,12,.35); backdrop-filter:blur(5px); -webkit-backdrop-filter:blur(5px);
@@ -34,17 +38,32 @@ nav.main-menu a:hover::after{transform:translateX(-50%) scale(1);}
 }
 
 @media (max-width:980px){
+  .brand-logo { height: 22px; }
+  
   nav.main-menu{
     position:fixed; top:0; left:-100%; width:85%; max-width:380px; height:100vh; z-index:1001;
     background:linear-gradient(165deg, rgba(20,15,42,.95), rgba(8,6,18,.98));
     backdrop-filter:blur(28px) saturate(140%); -webkit-backdrop-filter:blur(28px) saturate(140%);
-    flex-direction:column; padding:100px 32px 60px; gap:16px; 
+    flex-direction:column; padding:80px 32px 60px; gap:16px; 
     transition:left .4s cubic-bezier(0.4, 0, 0.2, 1);
     border-right:1px solid rgba(255,255,255,.06); box-shadow:30px 0 80px -20px rgba(0,0,0,.65);
-    justify-content: center;
+    justify-content: flex-start;
     overflow-y: auto; overflow-x: hidden;
   }
   nav.main-menu.open{left:0;}
+  
+  .mobile-close-btn {
+    display: flex; position: absolute; top: 16px; right: 16px; width: 40px; height: 40px;
+    align-items: center; justify-content: center; background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1); border-radius: 50%; cursor: pointer;
+  }
+  .mobile-close-btn span { position: relative; width: 20px; height: 20px; display: block; }
+  .mobile-close-btn span::before, .mobile-close-btn span::after {
+    content: ""; position: absolute; top: 50%; left: 0; width: 100%; height: 1.5px;
+    background: #fff; margin-top: -0.75px;
+  }
+  .mobile-close-btn span::before { transform: rotate(45deg); }
+  .mobile-close-btn span::after { transform: rotate(-45deg); }
   
   nav.main-menu a{
     position: relative; overflow: hidden;
