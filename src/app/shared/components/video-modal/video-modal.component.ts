@@ -1,15 +1,17 @@
 import { Component, input, output, ChangeDetectionStrategy } from '@angular/core';
+import { IconComponent } from '../icon/icon.component';
 
 @Component({
   selector: 'app-video-modal',
   standalone: true,
+  imports: [IconComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     @if (isOpen()) {
       <div class="modal-backdrop-vid" (click)="onBackdrop($event)" (window:keydown.escape)="close.emit()">
         <div class="modal-video-container">
           <button class="modal-close-btn" (click)="close.emit()" aria-label="Close video">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            <app-icon name="close" />
           </button>
           <div class="video-ratio-wrapper">
             <iframe 

@@ -1,11 +1,11 @@
 import { Component, ChangeDetectionStrategy, signal, OnInit, OnDestroy, HostListener } from '@angular/core';
 import { RevealDirective } from '../../../shared/directives/reveal.directive';
 import { FEATURED_WORK_DATA } from '../../../core/constants/featured-work.data';
-
+import { IconComponent } from '../../../shared/components/icon/icon.component';
 @Component({
   selector: 'app-featured-work',
   standalone: true,
-  imports: [RevealDirective],
+  imports: [RevealDirective, IconComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './featured-work.component.html',
   styleUrl: './featured-work.component.css'

@@ -1,16 +1,18 @@
 import { Component, input, ChangeDetectionStrategy } from '@angular/core';
 import { Service } from '../../../core/models/service.model';
-import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
-
+import { IconComponent } from '../icon/icon.component';
 @Component({
   selector: 'app-service-card',
   standalone: true,
+  imports: [IconComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrl: './service-card.component.css',
   template: `
     <div class="s-card glass" (mousemove)="onMouseMove($event)" (mouseleave)="onMouseLeave($event)">
       <span class="s-num">{{ padIndex() }}</span>
-      <div class="s-icon" [innerHTML]="safeIcon()"></div>
+      <div class="s-icon">
+        <app-icon [name]="service().icon" />
+      </div>
       <h3>{{ service().title }}</h3>
       <p>{{ service().description }}</p>
     </div>
@@ -20,14 +22,8 @@ export class ServiceCardComponent {
   readonly service = input.required<Service>();
   readonly index = input.required<number>();
 
-  constructor(private sanitizer: DomSanitizer) {}
-
   padIndex(): string {
     return String(this.index() + 1).padStart(2, '0');
-  }
-
-  safeIcon(): SafeHtml {
-    return this.sanitizer.bypassSecurityTrustHtml(this.service().icon);
   }
 
   onMouseMove(e: MouseEvent): void {

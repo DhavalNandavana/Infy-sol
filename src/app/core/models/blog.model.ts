@@ -3,4 +3,6 @@ export interface Blog {
   title: string;
   badge: string;
   gradient: string;
+  image: string;
+  content: string;
 }

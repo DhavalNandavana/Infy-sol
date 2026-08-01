@@ -15,7 +15,15 @@
         <div class="p-item" (click)="openModal(item)" appReveal>
           <div class="p-thumb">
             <!-- Inline style for height is overridden by CSS to ensure equal heights as requested -->
-            <div class="swatch" [style.height]="getHeightClass(item.height)" [style.background]="item.gradient"></div>
+            <div class="swatch" [style.height]="getHeightClass(item.height)" [style.background]="item.image ? 'url(&quot;' + item.image + '&quot;) center/contain no-repeat, ' + item.gradient : item.gradient">
+              @if (item.images && item.images.length > 0) {
+                <div class="images-slider" appAutoScroll>
+                  @for (img of item.images; track img) {
+                    <img [src]="img" class="slider-img" alt="">
+                  }
+                </div>
+              }
+            </div>
             <div class="p-overlay">
               <span class="p-cat">{{ item.category }}</span>
               <h3 class="p-title">{{ item.title }}</h3>

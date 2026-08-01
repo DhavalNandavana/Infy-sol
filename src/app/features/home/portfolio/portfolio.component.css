@@ -46,6 +46,28 @@
   transform: scale(1.08);
 }
 
+.images-slider {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  gap: 16px;
+  padding: 20px;
+  align-items: center;
+  scrollbar-width: none;
+}
+.images-slider::-webkit-scrollbar {
+  display: none;
+}
+.slider-img {
+  height: 90%;
+  max-width: 90%;
+  object-fit: contain;
+  flex-shrink: 0;
+  border-radius: 8px;
+}
+
 .p-overlay {
   position: absolute;
   inset: 0;

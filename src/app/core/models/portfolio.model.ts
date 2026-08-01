@@ -7,4 +7,6 @@ export interface PortfolioItem {
   tags: string[];
   height: number;
   gradient: string;
+  image?: string;
+  images?: string[];
 }

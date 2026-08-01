@@ -7,7 +7,7 @@
     </div>
     <div class="blog-grid">
       @for (blog of blogs; track blog.id) {
-        <app-blog-card [blog]="blog" />
+        <app-blog-card [blog]="blog" (readMore)="openBlog(blog)" />
       }
     </div>
     <div class="blog-actions center" appReveal style="margin-top:clamp(40px, 5vw, 70px); display:flex; justify-content:center; gap:clamp(12px, 1.2vw, 20px); flex-wrap:wrap;">
@@ -16,3 +16,4 @@
     </div>
   </div>
 </section>
+<app-blog-modal [blog]="selectedBlog()" (close)="closeBlog()"></app-blog-modal>

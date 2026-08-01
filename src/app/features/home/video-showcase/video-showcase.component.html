@@ -1,13 +1,9 @@
 <section class="video-section" appReveal>
   <!-- Background Video -->
   <div class="video-background-wrapper">
-    <iframe 
-      src="https://www.youtube.com/embed/fclAh1VugdU?autoplay=1&mute=1&loop=1&playlist=fclAh1VugdU&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1" 
-      frameborder="0" 
-      allow="autoplay; encrypted-media; gyroscope; picture-in-picture" 
-      tabindex="-1"
-      aria-hidden="true">
-    </iframe>
+    <video autoplay muted loop playsinline aria-hidden="true" [muted]="true">
+      <source src="/assets/Video%20Shows%20Skills.mp4" type="video/mp4">
+    </video>
   </div>
   
   <div class="video-overlay"></div>

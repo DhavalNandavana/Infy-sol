@@ -1,5 +1,6 @@
 import { Component, signal, computed, ChangeDetectionStrategy } from '@angular/core';
 import { RevealDirective } from '../../../shared/directives/reveal.directive';
+import { AutoScrollDirective } from '../../../shared/directives/auto-scroll.directive';
 import { PortfolioModalComponent } from '../../../shared/components/portfolio-modal/portfolio-modal.component';
 import { PORTFOLIO_DATA } from '../../../core/constants/portfolio.data';
 import { PortfolioItem } from '../../../core/models/portfolio.model';
@@ -7,7 +8,7 @@ import { PortfolioItem } from '../../../core/models/portfolio.model';
 @Component({
   selector: 'app-portfolio',
   standalone: true,
-  imports: [RevealDirective, PortfolioModalComponent],
+  imports: [RevealDirective, AutoScrollDirective, PortfolioModalComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './portfolio.component.html',
   styleUrl: './portfolio.component.css'
