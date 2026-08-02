@@ -4,5 +4,6 @@ export interface Blog {
   badge: string;
   gradient: string;
   image: string;
+  excerpt?: string;
   content: string;
 }

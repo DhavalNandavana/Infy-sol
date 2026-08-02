@@ -6,7 +6,7 @@ header#site-header.scrolled{
 }
 .nav-row{display:flex; align-items:center; justify-content:space-between;}
 .brand{display:flex; align-items:center; gap:clamp(8px, 0.9vw, 16px);}
-.brand-logo{height:clamp(26px, 2.5vw, 48px); width:auto; display:block; object-fit:contain; transition:height .35s var(--ease);}
+.brand-logo{height:clamp(20px, 2vw, 36px); width:auto; display:block; object-fit:contain; transition:height .35s var(--ease);}
 nav.main-menu{display:flex; gap:clamp(20px, 2.8vw, 48px); align-items:center;}
 nav.main-menu a{
   font-size:clamp(13px, 1vw, 17px); font-weight:600; color:var(--muted); position:relative; padding:6px 0; transition:all .4s cubic-bezier(0.16, 1, 0.3, 1); cursor:pointer; display:inline-block; transform-origin:center;
@@ -38,7 +38,7 @@ nav.main-menu a:hover::after{transform:translateX(-50%) scale(1);}
 }
 
 @media (max-width:980px){
-  .brand-logo { height: 22px; }
+  .brand-logo { height: 18px; }
   
   nav.main-menu{
     position:fixed; top:0; left:-100%; width:85%; max-width:380px; height:100vh; z-index:1001;

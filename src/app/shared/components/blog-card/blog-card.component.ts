@@ -13,7 +13,10 @@ import { Blog } from '../../../core/models/blog.model';
       </div>
       <div class="blog-body">
         <h3>{{ blog().title }}</h3>
-        <span class="blog-read" (click)="readMore.emit()" style="cursor: pointer;">Read More
+        @if (blog().excerpt) {
+          <p class="blog-excerpt">{{ blog().excerpt }}</p>
+        }
+        <span class="blog-read" (click)="readMore.emit()" style="cursor: pointer;">Read Full Article
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </span>
       </div>

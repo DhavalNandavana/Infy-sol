@@ -3,11 +3,17 @@
     <div class="footer-grid">
       <!-- Column 1: Company Info -->
       <div class="footer-col footer-about">
-        <a class="brand" style="margin-bottom:4px; display:inline-flex; align-items:center; gap:12px">
+        <a
+          class="brand"
+          style="margin-bottom: 4px; display: inline-flex; align-items: center; gap: 12px"
+        >
           <div class="brand-mark"></div>
           <div class="brand-name">INFYNEX <span>SOLUTION</span></div>
         </a>
-        <p>Infynex Solution is committed to empowering businesses with innovative digital strategies, web development, branding, SEO, and creative marketing solutions. As your trusted digital partner, we help businesses build <strong>Your Complete Digital Ecosystem</strong> that drives sustainable growth, strengthens brand identity, and creates a powerful online presence.</p>
+        <p>
+          Based in Ahmedabad, Infynex Solution is a premier IT, web development, and digital
+          marketing agency dedicated to scaling businesses globally.
+        </p>
       </div>
 
       <!-- Column 2: Quick Links -->
@@ -59,34 +65,97 @@
       <div class="footer-col">
         <div class="foot-title">Follow Us</div>
         <div class="social-row">
-          <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook" class="social-facebook">
+          <a
+            href="https://www.facebook.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook"
+            title="Facebook"
+            class="social-facebook"
+          >
             <app-icon name="social-facebook" role="img" />
           </a>
-          <a href="https://www.instagram.com/infynexsolution/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram" class="social-instagram">
+          <a
+            href="https://www.instagram.com/infynexsolution/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+            title="Instagram"
+            class="social-instagram"
+          >
             <app-icon name="social-instagram" role="img" />
           </a>
-          <a href="https://www.linkedin.com/in/infynex-solution/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn" class="social-linkedin">
+          <a
+            href="https://www.linkedin.com/in/infynex-solution/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+            title="LinkedIn"
+            class="social-linkedin"
+          >
             <app-icon name="social-linkedin" role="img" />
           </a>
-          <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" aria-label="Twitter (X)" title="Twitter (X)" class="social-twitter">
+          <a
+            href="https://twitter.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Twitter (X)"
+            title="Twitter (X)"
+            class="social-twitter"
+          >
             <app-icon name="social-twitter" role="img" />
           </a>
         </div>
-        <div class="foot-title" style="margin-top:clamp(24px, 2.6vw, 40px);">Also Find Us On</div>
+        <div class="foot-title" style="margin-top: clamp(24px, 2.6vw, 40px)">Also Find Us On</div>
         <div class="social-row">
-          <a href="https://www.behance.net/infynexsolution" target="_blank" rel="noopener noreferrer" aria-label="Behance" title="Behance" class="social-behance">
+          <a
+            href="https://www.behance.net/infynexsolution"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Behance"
+            title="Behance"
+            class="social-behance"
+          >
             <app-icon name="social-behance" role="img" />
           </a>
-          <a href="https://dribbble.com/InfynexSolution" target="_blank" rel="noopener noreferrer" aria-label="Dribbble" title="Dribbble" class="social-dribbble">
+          <a
+            href="https://dribbble.com/InfynexSolution"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Dribbble"
+            title="Dribbble"
+            class="social-dribbble"
+          >
             <app-icon name="social-dribbble" role="img" />
           </a>
-          <a href="https://in.pinterest.com/InfynexSolution/" target="_blank" rel="noopener noreferrer" aria-label="Pinterest" title="Pinterest" class="social-pinterest">
+          <a
+            href="https://in.pinterest.com/InfynexSolution/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Pinterest"
+            title="Pinterest"
+            class="social-pinterest"
+          >
             <app-icon name="social-pinterest" role="img" />
           </a>
-          <a href="https://pro.fiverr.com/freelancers/infynexsolution" target="_blank" rel="noopener noreferrer" aria-label="Fiverr" title="Fiverr" class="social-fiverr">
+          <a
+            href="https://pro.fiverr.com/freelancers/infynexsolution"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Fiverr"
+            title="Fiverr"
+            class="social-fiverr"
+          >
             <app-icon name="social-fiverr" role="img" />
           </a>
-          <a href="https://www.upwork.com/freelancers/~01f1586e1741bfd4f4?mp_source=share" target="_blank" rel="noopener noreferrer" aria-label="Upwork" title="Upwork" class="social-upwork">
+          <a
+            href="https://www.upwork.com/freelancers/~01f1586e1741bfd4f4?mp_source=share"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Upwork"
+            title="Upwork"
+            class="social-upwork"
+          >
             <app-icon name="social-upwork" role="img" />
           </a>
         </div>
@@ -94,7 +163,129 @@
     </div>
     <div class="foot-bottom">
       <span>&copy; {{ currentYear }} Infynex Solution. All Rights Reserved.</span>
+      <div class="legal-links">
+        <a (click)="openModal('privacy')" class="legal-link">Privacy Policy</a>
+        <a (click)="openModal('terms')" class="legal-link">Terms and Conditions</a>
+      </div>
       <span class="foot-tagline">Building Your Complete Digital Ecosystem.</span>
     </div>
   </div>
 </footer>
+
+@if (activeModal()) {
+  <div class="modal-bg open" (click)="onBackdropClick($event)">
+    <div class="modal glass policy-modal">
+      <button class="modal-close" (click)="closeModal()">✕</button>
+      <div class="modal-body policy-content">
+        @if (activeModal() === 'privacy') {
+          <h2>11. Privacy Policy</h2>
+          <p><strong>Effective Date:</strong> July 5, 2026</p>
+
+          <h3>1. Introduction</h3>
+          <p>
+            Welcome to Infynex Solution. We are committed to protecting your personal information
+            and your right to privacy. This Privacy Policy explains how we collect, use, and share
+            your information when you visit our website.
+          </p>
+
+          <h3>2. Information We Collect</h3>
+          <ul>
+            <li>
+              <strong>Personal Information:</strong> We may collect personal information such as
+              your name, email address, phone number, and company details when you voluntarily
+              submit forms on our website (e.g., Contact Us, Get a Quote).
+            </li>
+            <li>
+              <strong>Non-Personal Information:</strong> We automatically collect certain
+              information when you visit our site, such as your IP address, browser type, and device
+              information through cookies and analytics tools.
+            </li>
+          </ul>
+
+          <h3>3. How We Use Your Information</h3>
+          <p>We use the collected information to:</p>
+          <ul>
+            <li>Provide, operate, and maintain our services.</li>
+            <li>Improve and personalize your website experience.</li>
+            <li>
+              Communicate with you regarding your inquiries, projects, and promotional offers.
+            </li>
+            <li>Analyze website usage to enhance our marketing efforts.</li>
+          </ul>
+
+          <h3>4. Information Sharing</h3>
+          <p>
+            We do not sell, trade, or rent your personal information to third parties. We may share
+            data with trusted service providers who assist us in operating our website and
+            conducting our business, provided those parties agree to keep this information
+            confidential.
+          </p>
+
+          <h3>5. Data Security</h3>
+          <p>
+            We implement appropriate technical and organizational security measures designed to
+            protect the security of any personal information we process.
+          </p>
+
+          <h3>6. Contact Us</h3>
+          <p>
+            If you have questions or comments about this policy, you may email us at
+            hello&#64;infynexsolution.com.
+          </p>
+        } @else if (activeModal() === 'terms') {
+          <h2>12. Terms and Conditions</h2>
+          <p><strong>Effective Date:</strong> July 5, 2026</p>
+
+          <h3>1. Acceptance of Terms</h3>
+          <p>
+            By accessing and using the Infynex Solution website (the "Site") and our services, you
+            accept and agree to be bound by the terms and provision of this agreement.
+          </p>
+
+          <h3>2. Services Provided</h3>
+          <p>
+            Infynex Solution offers IT, web development, branding, SEO, packaging design, and
+            digital marketing services. The specific deliverables, timelines, and costs for any
+            project will be outlined in a separate, customized proposal or contract.
+          </p>
+
+          <h3>3. Intellectual Property Rights</h3>
+          <p>
+            Unless otherwise stated, Infynex Solution owns the intellectual property rights for all
+            material on the Site. For client projects, intellectual property rights to the final
+            deliverables are transferred to the client only upon receipt of full and final payment.
+          </p>
+
+          <h3>4. User Conduct</h3>
+          <p>
+            You agree not to use the Site in a way that may cause damage to the Site or impair the
+            availability or accessibility of the Site. You must not use the Site to copy, store,
+            host, transmit, send, use, publish, or distribute any material which consists of (or is
+            linked to) any spyware, computer virus, or malicious computer software.
+          </p>
+
+          <h3>5. Limitation of Liability</h3>
+          <p>
+            In no event shall Infynex Solution, nor any of its officers, directors, and employees,
+            be held liable for anything arising out of or in any way connected with your use of this
+            Site or our services, whether such liability is under contract, tort or otherwise.
+          </p>
+
+          <h3>6. Modifications to Terms</h3>
+          <p>
+            Infynex Solution reserves the right to revise these terms and conditions at any time as
+            it sees fit, and by using this Site you are expected to review these terms on a regular
+            basis.
+          </p>
+
+          <h3>7. Governing Law & Jurisdiction</h3>
+          <p>
+            These terms will be governed by and interpreted in accordance with the laws of Gujarat,
+            India, and you submit to the non-exclusive jurisdiction of the state and federal courts
+            located in Ahmedabad for the resolution of any disputes.
+          </p>
+        }
+      </div>
+    </div>
+  </div>
+}

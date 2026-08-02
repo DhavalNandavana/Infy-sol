@@ -3,11 +3,14 @@ import { Blog } from '../models/blog.model';
 export const BLOG_DATA: Blog[] = [
   {
     id: 1,
-    title: 'Why Branding Is More Than Just a Logo — Building a Complete Identity',
-    badge: 'Branding',
+    title: 'The Power of Minimalist Packaging in Premium Brands',
+    badge: 'Design',
     gradient: 'linear-gradient(135deg, #667eea, #764ba2)',
     image: 'assets/Blog 1 photo.png',
+    excerpt: 'In the competitive retail and e-commerce markets, clean layouts and minimalist design communicate luxury and purity. Whether you are launching a skincare line or a high-end beverage, learn how stripping away the clutter and focusing on premium typography can make your product stand out on the shelf...',
     content: `
+      <p><strong>In the competitive retail and e-commerce markets, clean layouts and minimalist design communicate luxury and purity. Whether you are launching a skincare line or a high-end beverage, learn how stripping away the clutter and focusing on premium typography can make your product stand out on the shelf.</strong></p>
+      
       <p>When most people think of a brand, the first thing that comes to mind is a logo. While a logo is an essential visual identifier, it’s only the tip of the iceberg. Real branding goes much deeper—it’s the entire experience your customers have with your company.</p>
       
       <h4>The Elements of a Complete Identity</h4>
@@ -22,12 +25,15 @@ export const BLOG_DATA: Blog[] = [
   },
   {
     id: 2,
-    title: '10 Packaging Design Trends That Will Dominate 2025',
-    badge: 'Design',
+    title: 'Print-Ready Perfection: Understanding CMYK and Dielines',
+    badge: 'Packaging',
     gradient: 'linear-gradient(135deg, #0DCCFA, #351CAC)',
     image: 'assets/Blog 2 photo.png',
+    excerpt: 'Designing a stunning label is only half the battle. To ensure your packaging looks perfect in the real world—especially for complex transparent labels—you need to master technical print requirements. In this guide, we break down CMYK color spaces, proper dieline setup, and preparing production-ready files for manufacturers...',
     content: `
-      <p>Packaging design is constantly evolving, driven by consumer preferences, technological advancements, and a growing emphasis on sustainability. As we look ahead to 2025, several key trends are set to shape the industry.</p>
+      <p><strong>Designing a stunning label is only half the battle. To ensure your packaging looks perfect in the real world—especially for complex transparent labels—you need to master technical print requirements. In this guide, we break down CMYK color spaces, proper dieline setup, and preparing production-ready files for manufacturers.</strong></p>
+      
+      <p>Packaging design is constantly evolving, driven by consumer preferences, technological advancements, and a growing emphasis on sustainability. As we look ahead, several key trends are set to shape the industry.</p>
       
       <h4>Top Trends to Watch</h4>
       <ol>
@@ -42,11 +48,14 @@ export const BLOG_DATA: Blog[] = [
   },
   {
     id: 3,
-    title: 'How SEO and Creative Design Work Together to Grow Your Business',
+    title: 'Optimizing Your Digital Presence for B2B Client Acquisition',
     badge: 'Marketing',
     gradient: 'linear-gradient(135deg, #11998e, #38ef7d)',
     image: 'assets/Blog 3 photo.png',
+    excerpt: 'Acquiring B2B clients requires more than just a good portfolio. Your brand identity, from your professional logo to your SEO-optimized website, needs to project authority and reliability. Discover the key digital touchpoints that decision-makers look for when choosing an agency or partner...',
     content: `
+      <p><strong>Acquiring B2B clients requires more than just a good portfolio. Your brand identity, from your professional logo to your SEO-optimized website, needs to project authority and reliability. Discover the key digital touchpoints that decision-makers look for when choosing an agency or partner.</strong></p>
+      
       <p>Search Engine Optimization (SEO) and creative design are often viewed as separate disciplines. However, when integrated effectively, they create a powerful synergy that can significantly boost your online presence and business growth.</p>
       
       <h4>The Intersection of SEO and Design</h4>
