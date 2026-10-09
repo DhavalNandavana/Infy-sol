@@ -9,7 +9,7 @@ import { IconComponent } from '../../../shared/components/icon/icon.component';
   imports: [RevealDirective, IconComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './why-choose-us.component.html',
-  styleUrl: './why-choose-us.component.css'
+  styleUrl: './why-choose-us.component.css',
 })
 export class WhyChooseUsComponent {
   readonly items = WHY_CHOOSE_DATA;

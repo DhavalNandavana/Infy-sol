@@ -9,18 +9,26 @@ import { IconComponent } from '../icon/icon.component';
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <div class="testi-card glass" tabindex="0">
-      <div class="quote-icon" aria-hidden="true">
-        <app-icon name="quote" />
+      <div class="testi-header">
+        <div class="quote-icon" aria-hidden="true">
+          <app-icon name="quote" />
+        </div>
+        <div class="stars" aria-label="5 out of 5 stars">
+          {{ getStars() }}
+        </div>
       </div>
-      <div class="stars" aria-label="5 out of 5 stars">{{ getStars() }}</div>
-      <p>{{ testimonial().quote }}</p>
+      
+      <p class="quote-text">&ldquo;{{ testimonial().quote }}&rdquo;</p>
+      
+      <div class="testi-divider"></div>
+
       <div class="testi-person">
         <div class="avatar" [attr.aria-label]="testimonial().name + ' avatar'">
           <span class="avatar-initials">{{ initials() }}</span>
         </div>
         <div class="person-info">
-          <b>{{ testimonial().name }}</b>
-          <span>{{ testimonial().role }}</span>
+          <b class="person-name">{{ testimonial().name }}</b>
+          <span class="person-role">{{ testimonial().role }}</span>
         </div>
       </div>
     </div>

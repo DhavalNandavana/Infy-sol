@@ -6,8 +6,9 @@ export const BLOG_DATA: Blog[] = [
     title: 'The Power of Minimalist Packaging in Premium Brands',
     badge: 'Design',
     gradient: 'linear-gradient(135deg, #667eea, #764ba2)',
-    image: 'assets/Blog 1 photo.png',
-    excerpt: 'In the competitive retail and e-commerce markets, clean layouts and minimalist design communicate luxury and purity. Whether you are launching a skincare line or a high-end beverage, learn how stripping away the clutter and focusing on premium typography can make your product stand out on the shelf...',
+    image: 'assets/Blog 01 Image.jpg',
+    excerpt:
+      'In the competitive retail and e-commerce markets, clean layouts and minimalist design communicate luxury and purity. Whether you are launching a skincare line or a high-end beverage, learn how stripping away the clutter and focusing on premium typography can make your product stand out on the shelf...',
     content: `
       <p><strong>In the competitive retail and e-commerce markets, clean layouts and minimalist design communicate luxury and purity. Whether you are launching a skincare line or a high-end beverage, learn how stripping away the clutter and focusing on premium typography can make your product stand out on the shelf.</strong></p>
       
@@ -21,15 +22,16 @@ export const BLOG_DATA: Blog[] = [
       </ul>
       
       <p>Building a complete identity means ensuring every touchpoint—from your website and social media to customer service—reflects these core elements. A strong, cohesive brand builds trust, fosters loyalty, and ultimately drives business growth.</p>
-    `
+    `,
   },
   {
     id: 2,
     title: 'Print-Ready Perfection: Understanding CMYK and Dielines',
     badge: 'Packaging',
     gradient: 'linear-gradient(135deg, #0DCCFA, #351CAC)',
-    image: 'assets/Blog 2 photo.png',
-    excerpt: 'Designing a stunning label is only half the battle. To ensure your packaging looks perfect in the real world—especially for complex transparent labels—you need to master technical print requirements. In this guide, we break down CMYK color spaces, proper dieline setup, and preparing production-ready files for manufacturers...',
+    image: 'assets/Blog 02 Image.jpeg',
+    excerpt:
+      'Designing a stunning label is only half the battle. To ensure your packaging looks perfect in the real world—especially for complex transparent labels—you need to master technical print requirements. In this guide, we break down CMYK color spaces, proper dieline setup, and preparing production-ready files for manufacturers...',
     content: `
       <p><strong>Designing a stunning label is only half the battle. To ensure your packaging looks perfect in the real world—especially for complex transparent labels—you need to master technical print requirements. In this guide, we break down CMYK color spaces, proper dieline setup, and preparing production-ready files for manufacturers.</strong></p>
       
@@ -44,15 +46,16 @@ export const BLOG_DATA: Blog[] = [
       </ol>
       
       <p>Staying ahead of these trends will help brands create packaging that not only protects the product but also captantly engages the modern consumer.</p>
-    `
+    `,
   },
   {
     id: 3,
     title: 'Optimizing Your Digital Presence for B2B Client Acquisition',
     badge: 'Marketing',
     gradient: 'linear-gradient(135deg, #11998e, #38ef7d)',
-    image: 'assets/Blog 3 photo.png',
-    excerpt: 'Acquiring B2B clients requires more than just a good portfolio. Your brand identity, from your professional logo to your SEO-optimized website, needs to project authority and reliability. Discover the key digital touchpoints that decision-makers look for when choosing an agency or partner...',
+    image: 'assets/Blog 03 Image.jpg',
+    excerpt:
+      'Acquiring B2B clients requires more than just a good portfolio. Your brand identity, from your professional logo to your SEO-optimized website, needs to project authority and reliability. Discover the key digital touchpoints that decision-makers look for when choosing an agency or partner...',
     content: `
       <p><strong>Acquiring B2B clients requires more than just a good portfolio. Your brand identity, from your professional logo to your SEO-optimized website, needs to project authority and reliability. Discover the key digital touchpoints that decision-makers look for when choosing an agency or partner.</strong></p>
       
@@ -69,6 +72,6 @@ export const BLOG_DATA: Blog[] = [
         <li>Ensure your visually rich content doesn't compromise site speed.</li>
         <li>Use descriptive text and tags for all design assets to aid SEO.</li>
       </ul>
-    `
-  }
+    `,
+  },
 ];

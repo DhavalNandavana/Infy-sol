@@ -1,4 +1,4 @@
-<section class="section" id="contact" aria-label="Contact Infynex Solution">
+<!-- <section class="section" id="contact" aria-label="Contact Infynex Solution">
   <div class="wrap">
     <div class="section-head center" appReveal>
       <div class="eyebrow" style="margin:0 auto 18px; justify-content:center;">Get Started</div>
@@ -117,4 +117,432 @@
       </div>
     </div>
   </div>
+</section> -->
+
+
+
+<section
+  class="section"
+  id="contact"
+  aria-label="Contact Infynex Solution">
+
+  <div class="wrap">
+
+    <!-- ============================= -->
+    <!-- SECTION HEADER -->
+    <!-- ============================= -->
+
+    <div
+      class="section-head center"
+      appReveal>
+
+      <div
+        class="eyebrow"
+        style="margin: 0 auto 18px; justify-content: center;">
+        Get Started
+      </div>
+
+      <h2>
+        Let's Build Your Complete
+        <span class="gtext">Digital Ecosystem</span>
+        Together
+      </h2>
+
+      <p class="contact-intro">
+        Your journey to digital success begins here. Whether you're looking
+        to launch a new website, refresh your brand, optimize your online
+        presence, or develop a comprehensive digital marketing strategy,
+        Infynex Solution is ready to partner with you. Reach out today for
+        a personalized consultation and discover how we can help you build
+        <strong>Your Complete Digital Ecosystem</strong>.
+      </p>
+
+    </div>
+
+
+    <!-- ============================= -->
+    <!-- CONTACT WRAPPER -->
+    <!-- ============================= -->
+
+    <div
+      class="contact-wrap"
+      appReveal>
+
+      <div class="contact-grid">
+
+
+        <!-- ================================= -->
+        <!-- CONTACT INFORMATION -->
+        <!-- ================================= -->
+
+        <div class="contact-info">
+
+          <!-- Consultation Button -->
+          <div class="contact-cta-row">
+
+            <a
+              href="#contact"
+              class="btn btn-primary btn-contact">
+
+              Request a Free Consultation
+
+              <app-icon
+                name="arrow-right"
+                style="width: 16px; height: 16px;">
+              </app-icon>
+
+            </a>
+
+          </div>
+
+
+          <!-- Contact Information List -->
+          <div class="c-info-list">
+
+
+            <!-- Phone -->
+            <div class="c-info-item">
+
+              <div class="c-info-icon">
+                <app-icon name="phone"></app-icon>
+              </div>
+
+              <div>
+                <b>Phone</b>
+                <span>+91 9824253581</span>
+              </div>
+
+            </div>
+
+
+            <!-- Email -->
+            <div class="c-info-item">
+
+              <div class="c-info-icon">
+                <app-icon name="email"></app-icon>
+              </div>
+
+              <div>
+                <b>Email</b>
+                <span>
+                  dhavalnandavana&#64;gmail.com
+                </span>
+              </div>
+
+            </div>
+
+
+            <!-- Address -->
+            <div class="c-info-item">
+
+              <div class="c-info-icon">
+                <app-icon name="address"></app-icon>
+              </div>
+
+              <div>
+                <b>Address</b>
+                <span>Ahmedabad, Gujarat, India</span>
+              </div>
+
+            </div>
+
+
+            <!-- Business Hours -->
+            <div class="c-info-item">
+
+              <div class="c-info-icon">
+                <app-icon name="clock"></app-icon>
+              </div>
+
+              <div>
+                <b>Business Hours</b>
+                <span>24/7 Support</span>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- ================================= -->
+        <!-- CONTACT FORM -->
+        <!-- ================================= -->
+
+        <form
+          [formGroup]="contactForm"
+          (ngSubmit)="onSubmit()"
+          class="form-grid"
+          aria-label="Contact form"
+          novalidate>
+
+
+          <!-- ============================= -->
+          <!-- FULL NAME -->
+          <!-- ============================= -->
+
+          <div class="field">
+
+            <input
+              type="text"
+              id="name"
+              formControlName="name"
+              placeholder=" "
+              autocomplete="name"
+              aria-required="true"
+              [class.error]="isInvalid('name')">
+
+            <label for="name">
+              Full Name
+            </label>
+
+            @if (isInvalid('name')) {
+
+              <span class="field-error">
+                Name is required
+              </span>
+
+            }
+
+          </div>
+
+
+          <!-- ============================= -->
+          <!-- EMAIL -->
+          <!-- ============================= -->
+
+          <div class="field">
+
+            <input
+              type="email"
+              id="email"
+              formControlName="email"
+              placeholder=" "
+              autocomplete="email"
+              aria-required="true"
+              [class.error]="isInvalid('email')">
+
+            <label for="email">
+              Email Address
+            </label>
+
+            @if (isInvalid('email')) {
+
+              <span class="field-error">
+                Valid email is required
+              </span>
+
+            }
+
+          </div>
+
+
+          <!-- ============================= -->
+          <!-- PHONE -->
+          <!-- ============================= -->
+
+          <div class="field">
+
+            <input
+              type="tel"
+              id="phone"
+              formControlName="phone"
+              placeholder=" "
+              autocomplete="tel">
+
+            <label for="phone">
+              Phone Number
+            </label>
+
+          </div>
+
+
+          <!-- ============================= -->
+          <!-- SERVICE -->
+          <!-- ============================= -->
+
+          <div class="field">
+
+            <select
+              id="service"
+              formControlName="service"
+              aria-required="true"
+              [class.error]="isInvalid('service')">
+
+              <option
+                value=""
+                disabled>
+                Select Service
+              </option>
+
+              <option value="Branding">
+                Branding
+              </option>
+
+              <option value="Logo Design">
+                Logo Design
+              </option>
+
+              <option value="Packaging Design">
+                Packaging Design
+              </option>
+
+              <option value="Social Media Design">
+                Social Media Design
+              </option>
+
+              <option value="Search Engine Optimization (SEO)">
+                Search Engine Optimization (SEO)
+              </option>
+
+              <option value="Social Media Marketing">
+                Social Media Marketing
+              </option>
+
+              <option value="Video Editing">
+                Video Editing
+              </option>
+
+              <option value="Graphic Design">
+                Graphic Design
+              </option>
+
+              <option value="Stationery Design">
+                Stationery Design
+              </option>
+
+              <option value="Website Development">
+                Website Development
+              </option>
+
+              <option value="On-Page and Off-Page SEO">
+                On-Page and Off-Page SEO
+              </option>
+
+            </select>
+
+            <label for="service">
+              Service Interested In
+            </label>
+
+            @if (isInvalid('service')) {
+
+              <span class="field-error">
+                Please select a service
+              </span>
+
+            }
+
+          </div>
+
+
+          <!-- ============================= -->
+          <!-- MESSAGE -->
+          <!-- ============================= -->
+
+          <div class="field full">
+
+            <textarea
+              id="message"
+              formControlName="message"
+              placeholder=" "
+              aria-required="true"
+              [class.error]="isInvalid('message')">
+            </textarea>
+
+            <label for="message">
+              Your Message
+            </label>
+
+            @if (isInvalid('message')) {
+
+              <span class="field-error">
+                Message must be at least 10 characters
+              </span>
+
+            }
+
+          </div>
+
+
+          <!-- ============================= -->
+          <!-- FORM FOOTER -->
+          <!-- ============================= -->
+
+          <div class="form-foot">
+
+
+            <!-- Submit Button -->
+            <button
+              type="submit"
+              class="btn btn-primary"
+              [disabled]="loading()">
+
+              @if (loading()) {
+
+                Sending...
+
+              } @else {
+
+                Send Message
+
+              }
+
+
+              @if (!loading()) {
+
+                <app-icon
+                  name="send"
+                  style="width: 16px; height: 16px;">
+                </app-icon>
+
+              }
+
+            </button>
+
+
+            <!-- ============================= -->
+            <!-- SUCCESS MESSAGE -->
+            <!-- ============================= -->
+
+            @if (success()) {
+
+              <div class="form-success show">
+
+                <app-icon
+                  name="check-circle">
+                </app-icon>
+
+                Message sent successfully!
+
+              </div>
+
+            }
+
+
+            <!-- ============================= -->
+            <!-- ERROR MESSAGE -->
+            <!-- ============================= -->
+
+            @if (errorMessage()) {
+
+              <div class="field-error">
+
+                {{ errorMessage() }}
+
+              </div>
+
+            }
+
+          </div>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
 </section>

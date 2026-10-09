@@ -14,24 +14,54 @@
 }
 .particles-canvas{position:absolute; inset:0; width:100%; height:100%;}
 .hero-row{position:relative; z-index:2; display:grid; grid-template-columns:1.05fr .95fr; gap:clamp(24px, 3vw, 60px); align-items:center;}
-.hero-content h1{font-size:clamp(38px,5.4vw,82px); margin-bottom:clamp(16px, 2vw, 30px);}
-.hero-content p.lead{font-size:clamp(15px, 1.2vw, 22px); color:var(--muted); max-width:clamp(340px, 40vw, 600px); margin-bottom:clamp(24px, 3vw, 48px);}
-.hero-actions{display:flex; gap:clamp(12px, 1.2vw, 22px); flex-wrap:wrap;}
+.hero-content .eyebrow{animation:heroFadeIn .7s cubic-bezier(.16,1,.3,1) .1s both;}
+.hero-content h1{font-size:clamp(38px,5.4vw,82px); margin-bottom:clamp(16px, 2vw, 30px); animation:heroFadeIn .7s cubic-bezier(.16,1,.3,1) .18s both;}
+.hero-content p.lead{font-size:clamp(15px, 1.2vw, 22px); color:var(--muted); max-width:clamp(340px, 40vw, 600px); margin-bottom:clamp(24px, 3vw, 48px); animation:heroFadeIn .7s cubic-bezier(.16,1,.3,1) .26s both;}
+.hero-actions{display:flex; gap:clamp(12px, 1.2vw, 22px); flex-wrap:wrap; animation:heroFadeIn .7s cubic-bezier(.16,1,.3,1) .34s both;}
+@keyframes heroFadeIn{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
 
 .hero-visual{position:relative; height:clamp(320px, 40vw, 620px);}
+
+/* Floating Box Containers - SIZES STRICTLY UNCHANGED */
 .float-card{
   position:absolute; border-radius:18px; padding:clamp(12px, 1.3vw, 24px); background:linear-gradient(160deg, rgba(255,255,255,.07), rgba(255,255,255,.02));
-  border:1px solid var(--line-2); backdrop-filter:blur(14px); box-shadow:0 30px 60px -20px rgba(0,0,0,.6);
-  will-change:transform;
+  border:1px solid var(--line-2); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); box-shadow:0 30px 60px -20px rgba(0,0,0,.6);
+  will-change:transform; cursor:pointer;
+  transition:border-color .4s ease, box-shadow .4s ease;
+}
+.float-card:hover{
+  border-color:rgba(13,204,250,.5);
+  box-shadow:0 30px 60px -15px rgba(0,0,0,.7), 0 0 24px rgba(13,204,250,.22);
 }
 .fc-1{width:clamp(180px, 17vw, 300px); top:0; right:30px; animation:bob 6s ease-in-out infinite;}
 .fc-2{width:clamp(150px, 14vw, 250px); top:200px; left:0; animation:bob 7s ease-in-out infinite 1s;}
 .fc-3{width:clamp(130px, 12vw, 220px); bottom:10px; right:80px; animation:bob 5.5s ease-in-out infinite .5s;}
 @keyframes bob{0%,100%{transform:translateY(0);}50%{transform:translateY(-18px);}}
-.fc-swatch{height:clamp(50px, 5vw, 90px); border-radius:10px; margin-bottom:clamp(6px, 0.7vw, 12px);}
-.fc-1 .fc-swatch{background:var(--grad);}
-.fc-2 .fc-swatch{background:linear-gradient(160deg,var(--cyan),#0a3a52);}
-.fc-3 .fc-swatch{background:linear-gradient(160deg,var(--purple),#1a0f55);}
+
+/* Swatch Image Box - HEIGHT STRICTLY PRESERVED */
+.fc-swatch{
+  height:clamp(50px, 5vw, 90px); border-radius:10px; margin-bottom:clamp(6px, 0.7vw, 12px);
+  position:relative; overflow:hidden; border:1px solid rgba(255,255,255,.12);
+  background:rgba(6,5,12,.6);
+}
+.fc-swatch::after{
+  content:""; position:absolute; inset:0; pointer-events:none; border-radius:inherit;
+  background:linear-gradient(180deg, rgba(255,255,255,.1) 0%, transparent 60%, rgba(6,5,12,.35) 100%);
+}
+.fc-img{
+  width:100%; height:100%; object-fit:cover; display:block;
+  transition:transform .6s var(--ease), filter .4s ease;
+  filter:brightness(0.92) contrast(1.06);
+}
+.float-card:hover .fc-img{
+  transform:scale(1.08); filter:brightness(1.02) contrast(1.08);
+}
+
+/* Custom Image Alignments */
+.fc-1 .fc-img{object-position:center 30%;}
+.fc-2 .fc-img{object-position:center center;}
+.fc-3 .fc-img{object-position:center 35%;}
+
 .fc-label{font-family:var(--mono); font-size:clamp(10px, 0.72vw, 13px); color:var(--muted); text-transform:uppercase; letter-spacing:.08em;}
 .fc-title{font-size:clamp(12px, 0.9vw, 16px); font-weight:600; margin-top:4px;}
 .center-orb{
@@ -56,14 +86,14 @@
     align-items: center; 
     margin-bottom: 40px; 
   }
-  .float-card {
-    position: relative !important;
-    width: 85% !important;
-    max-width: 280px;
-    top: auto !important;
-    left: auto !important;
-    right: auto !important;
-    bottom: auto !important;
+  .float-card { 
+    position: relative !important; 
+    width: 85% !important; 
+    max-width: 280px; 
+    top: auto !important; 
+    left: auto !important; 
+    right: auto !important; 
+    bottom: auto !important; 
   }
   .fc-1 { align-self: flex-end; }
   .fc-2 { align-self: flex-start; }

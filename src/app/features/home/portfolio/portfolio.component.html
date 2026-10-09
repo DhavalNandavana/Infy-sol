@@ -10,28 +10,86 @@
         <button class="filter-btn" [class.active]="activeFilter() === cat" (click)="setFilter(cat)">{{ cat === 'all' ? 'All' : cat }}</button>
       }
     </div>
-    <div class="portfolio-grid">
-      @for (item of filteredItems(); track item.id) {
-        <div class="p-item" (click)="openModal(item)" appReveal>
-          <div class="p-thumb">
-            <!-- Inline style for height is overridden by CSS to ensure equal heights as requested -->
-            <div class="swatch" [style.height]="getHeightClass(item.height)" [style.background]="item.image ? 'url(&quot;' + item.image + '&quot;) center/contain no-repeat, ' + item.gradient : item.gradient">
-              @if (item.images && item.images.length > 0) {
-                <div class="images-slider" appAutoScroll>
-                  @for (img of item.images; track img) {
-                    <img [src]="img" class="slider-img" alt="">
-                  }
-                </div>
+
+    <!-- ═══ Overlapping Card Showcase ═══ -->
+    <div class="showcase-container" appReveal
+         (mouseenter)="onShowcaseHover(true)"
+         (mouseleave)="onShowcaseHover(false)"
+         (touchstart)="onTouchStart($event)"
+         (touchmove)="onTouchMove($event)"
+         (touchend)="onTouchEnd($event)">
+
+      <!-- Navigation Arrows -->
+      <button class="showcase-nav showcase-nav--prev" (click)="prev()" aria-label="Previous project">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15 18 9 12 15 6"/>
+        </svg>
+      </button>
+
+      <div class="showcase-viewport">
+        <div class="showcase-track">
+          @for (item of filteredItems(); track $index; let i = $index) {
+            <div class="showcase-card"
+                 [class.is-active]="i === activeIndex()"
+                 [style.transform]="cardStyles()[i].transform"
+                 [style.opacity]="cardStyles()[i].opacity"
+                 [style.z-index]="cardStyles()[i].zIndex"
+                 [style.filter]="cardStyles()[i].filter"
+                 [style.pointer-events]="cardStyles()[i].pointerEvents"
+                 (click)="onCardClick(i)">
+
+              <div class="card-visual">
+                @if (getCardImage(item)) {
+                  <img [src]="getCardImage(item)" [alt]="item.title" class="card-img" loading="lazy" />
+                } @else {
+                  <div class="card-gradient" [style.background]="item.gradient"></div>
+                }
+                <div class="card-shine"></div>
+              </div>
+
+              <div class="card-info">
+                <span class="card-category">{{ item.category }}</span>
+                <h3 class="card-title">{{ item.title }}</h3>
+                @if (i === activeIndex()) {
+                  <p class="card-desc">{{ item.description }}</p>
+                  <div class="card-tags">
+                    @for (tag of item.tags; track tag) {
+                      <span class="card-tag">{{ tag }}</span>
+                    }
+                  </div>
+                }
+              </div>
+
+              <!-- Active card glow -->
+              @if (i === activeIndex()) {
+                <div class="card-glow"></div>
               }
             </div>
-            <div class="p-overlay">
-              <span class="p-cat">{{ item.category }}</span>
-              <h3 class="p-title">{{ item.title }}</h3>
-            </div>
-          </div>
+          }
         </div>
+      </div>
+
+      <button class="showcase-nav showcase-nav--next" (click)="next()" aria-label="Next project">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Dot Indicators -->
+    <div class="showcase-dots" appReveal>
+      @for (item of filteredItems(); track $index; let i = $index) {
+        <button class="dot" [class.active]="i === activeIndex()" (click)="goTo(i)" [attr.aria-label]="'Go to project ' + (i + 1)"></button>
       }
     </div>
+
+    <!-- Counter -->
+    <div class="showcase-counter" appReveal>
+      <span class="counter-current">{{ activeIndex() + 1 }}</span>
+      <span class="counter-divider">/</span>
+      <span class="counter-total">{{ filteredItems().length }}</span>
+    </div>
+
     <div class="portfolio-actions center" appReveal style="margin-top:clamp(40px, 5vw, 70px); display:flex; justify-content:center; gap:clamp(12px, 1.2vw, 20px); flex-wrap:wrap;">
       <a href="#portfolio" class="btn btn-primary" appMagnetic>View Our Portfolio</a>
       <a href="#blog" class="btn btn-ghost" appMagnetic>Read Our Case Studies</a>

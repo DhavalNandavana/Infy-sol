@@ -1,37 +1,248 @@
 /* Section intro paragraph */
-.testi-intro{
-  color:var(--muted);
-  margin-top:clamp(12px, 1.2vw, 22px);
-  font-size:clamp(14px, 1vw, 18px);
-  line-height:1.7;
-  max-width:clamp(480px, 60vw, 860px);
-  margin-left:auto;
-  margin-right:auto;
+.testi-intro {
+  color: var(--muted);
+  margin-top: clamp(12px, 1.2vw, 22px);
+  font-size: clamp(14px, 1vw, 18px);
+  line-height: 1.7;
+  max-width: clamp(480px, 60vw, 860px);
+  margin-left: auto;
+  margin-right: auto;
 }
-.testi-intro strong{
-  color:var(--cyan);
-  font-weight:600;
-}
-
-/* 3-card grid layout */
-.testi-grid{
-  display:grid;
-  grid-template-columns:repeat(3, 1fr);
-  gap:clamp(20px, 2vw, 32px);
-  align-items:stretch;
+.testi-intro strong {
+  color: var(--cyan);
+  font-weight: 600;
 }
 
-/* Tablet: 2 columns */
-@media (max-width:991px){
-  .testi-grid{grid-template-columns:repeat(2, 1fr);}
+/* ==================================================
+   CAROUSEL CONTAINER & CONTROLS
+   ================================================== */
+.testi-carousel-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(16px, 2.4vw, 36px);
+  width: 100%;
+  max-width: 1240px;
+  margin: clamp(32px, 3.5vw, 56px) auto 0;
+  outline: none;
 }
 
-/* Mobile: 1 column */
-@media (max-width:640px){
-  .testi-grid{grid-template-columns:1fr;}
+.testi-carousel-wrapper:focus-visible {
+  outline: 2px solid rgba(13, 204, 250, 0.4);
+  outline-offset: 8px;
+  border-radius: 28px;
 }
 
-/* Large desktop */
-@media (min-width:1600px){
-  .testi-grid{gap:clamp(28px, 2.2vw, 40px);}
+/* Side navigation buttons (Desktop/Tablet) */
+.testi-nav-btn {
+  width: clamp(46px, 3.5vw, 56px);
+  height: clamp(46px, 3.5vw, 56px);
+  border-radius: 50%;
+  background: rgba(14, 11, 28, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: transform 0.35s var(--ease), border-color 0.35s ease, background 0.35s ease, box-shadow 0.35s ease, color 0.35s ease;
+  z-index: 5;
+  box-shadow: 0 8px 24px -6px rgba(0, 0, 0, 0.5);
+}
+
+.testi-nav-btn app-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.testi-nav-btn:hover {
+  background: rgba(22, 17, 44, 0.92);
+  border-color: var(--cyan);
+  color: var(--cyan);
+  box-shadow: 0 0 24px rgba(13, 204, 250, 0.35);
+  transform: scale(1.08);
+}
+
+.testi-nav-btn:active {
+  transform: scale(0.95);
+}
+
+.testi-nav-btn:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 4px;
+}
+
+/* Carousel stage holding the single active card */
+.testi-carousel-stage {
+  flex: 1;
+  max-width: 1080px;
+  min-height: clamp(300px, 22vw, 380px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: visible;
+}
+
+/* Animated slide item */
+.testi-slide {
+  width: 100%;
+  display: block;
+}
+
+.testi-slide.slide-next {
+  animation: testiSlideInNext 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.testi-slide.slide-prev {
+  animation: testiSlideInPrev 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes testiSlideInNext {
+  0% {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes testiSlideInPrev {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ==================================================
+   PAGINATION DOTS & CONTROLS BAR
+   ================================================== */
+.testi-controls-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: clamp(24px, 2.5vw, 36px);
+}
+
+.testi-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.testi-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 99px;
+  background: rgba(255, 255, 255, 0.18);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: width 0.35s var(--ease), background 0.35s ease, box-shadow 0.35s ease;
+}
+
+.testi-dot:hover {
+  background: rgba(13, 204, 250, 0.6);
+}
+
+.testi-dot.active {
+  width: 28px;
+  background: linear-gradient(90deg, #0dccfa, #6366f1);
+  box-shadow: 0 0 12px rgba(13, 204, 250, 0.5);
+}
+
+.testi-dot:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 3px;
+}
+
+/* Mobile navigation buttons (hidden by default on desktop) */
+.mobile-nav-btn {
+  display: none;
+}
+
+/* ==================================================
+   RESPONSIVE BREAKPOINTS
+   ================================================== */
+/* Tablets (<= 991px) */
+@media (max-width: 991px) {
+  .testi-carousel-wrapper {
+    gap: 16px;
+  }
+}
+
+/* Mobile Devices (<= 768px) */
+@media (max-width: 768px) {
+  .testi-carousel-wrapper {
+    margin-top: 24px;
+    width: 100%;
+  }
+
+  /* Hide desktop side flanking buttons on mobile */
+  .testi-nav-btn.desktop-only {
+    display: none;
+  }
+
+  .testi-carousel-stage {
+    width: 100%;
+    min-height: auto;
+  }
+
+  /* Show mobile flanking buttons next to dots */
+  .mobile-nav-btn {
+    display: flex;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(14, 11, 28, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: var(--text);
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: transform 0.25s var(--ease), border-color 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .mobile-nav-btn app-icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .mobile-nav-btn:hover,
+  .mobile-nav-btn:active {
+    border-color: var(--cyan);
+    color: var(--cyan);
+    box-shadow: 0 0 16px rgba(13, 204, 250, 0.35);
+  }
+
+  .mobile-nav-btn:focus-visible {
+    outline: 2px solid var(--cyan);
+    outline-offset: 3px;
+  }
+}
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .testi-slide.slide-next,
+  .testi-slide.slide-prev {
+    animation: testiFadeOnly 0.3s ease both;
+  }
+
+  @keyframes testiFadeOnly {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
 }

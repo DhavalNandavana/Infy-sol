@@ -18,10 +18,6 @@ export class HeroComponent implements AfterViewInit, OnDestroy {
   private animFrame = 0;
 
   ngAfterViewInit(): void {
-    const section = this.heroSection()?.nativeElement;
-    if (section) {
-      this.animationService.heroEntrance(section);
-    }
     this.initParticles();
   }
 
@@ -72,3 +68,4 @@ export class HeroComponent implements AfterViewInit, OnDestroy {
     draw();
   }
 }
+ 

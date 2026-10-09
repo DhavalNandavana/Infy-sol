@@ -5,10 +5,95 @@
       <h2>Voices of Success: Real Stories from Our Digital Ecosystem</h2>
       <p class="testi-intro">The true measure of our success lies in the achievements of our clients. We are proud to share their experiences and the tangible results they've gained by partnering with Infynex Solution. These testimonials highlight how our integrated approach to building <strong>Your Complete Digital Ecosystem</strong> has helped businesses achieve their digital goals, strengthen their online presence, and overcome market challenges.</p>
     </div>
-    <div class="testi-grid" appReveal>
-      @for (t of testimonials; track t.id) {
-        <app-testimonial-card [testimonial]="t" />
-      }
+
+    <!-- Single Active Testimonial Carousel -->
+    <div
+      class="testi-carousel-wrapper"
+      appReveal
+      (mouseenter)="pauseAutoScroll()"
+      (mouseleave)="resumeAutoScroll()"
+      (focusin)="pauseAutoScroll()"
+      (focusout)="resumeAutoScroll()"
+      (touchstart)="onTouchStart($event)"
+      (touchend)="onTouchEnd($event)"
+      (keydown)="onKeyDown($event)"
+      tabindex="0"
+      role="region"
+      aria-roledescription="carousel"
+      aria-label="Client Testimonials Carousel"
+    >
+      <!-- Desktop Navigation Button Prev -->
+      <button
+        type="button"
+        class="testi-nav-btn desktop-only"
+        (click)="previousTestimonial()"
+        aria-label="Previous testimonial"
+      >
+        <app-icon name="nav-prev" />
+      </button>
+
+      <!-- Carousel Stage with Animated Slide -->
+      <div class="testi-carousel-stage" aria-live="polite">
+        @for (t of testimonials; track t.id; let idx = $index) {
+          @if (idx === currentIndex()) {
+            <div
+              class="testi-slide"
+              [class.slide-next]="direction() === 'next'"
+              [class.slide-prev]="direction() === 'prev'"
+              role="group"
+              aria-roledescription="slide"
+              [attr.aria-label]="'Testimonial ' + (idx + 1) + ' of ' + testimonials.length"
+            >
+              <app-testimonial-card [testimonial]="t" />
+            </div>
+          }
+        }
+      </div>
+
+      <!-- Desktop Navigation Button Next -->
+      <button
+        type="button"
+        class="testi-nav-btn desktop-only"
+        (click)="nextTestimonial()"
+        aria-label="Next testimonial"
+      >
+        <app-icon name="nav-next" />
+      </button>
+    </div>
+
+    <!-- Controls Bar (Pagination Dots + Mobile Nav Buttons) -->
+    <div class="testi-controls-bar" appReveal>
+      <button
+        type="button"
+        class="mobile-nav-btn"
+        (click)="previousTestimonial()"
+        aria-label="Previous testimonial"
+      >
+        <app-icon name="nav-prev" />
+      </button>
+
+      <div class="testi-dots" role="tablist" aria-label="Testimonial slides">
+        @for (t of testimonials; track t.id; let idx = $index) {
+          <button
+            type="button"
+            class="testi-dot"
+            [class.active]="idx === currentIndex()"
+            (click)="goTo(idx)"
+            [attr.aria-label]="'Go to testimonial ' + (idx + 1)"
+            [attr.aria-selected]="idx === currentIndex()"
+            role="tab"
+          ></button>
+        }
+      </div>
+
+      <button
+        type="button"
+        class="mobile-nav-btn"
+        (click)="nextTestimonial()"
+        aria-label="Next testimonial"
+      >
+        <app-icon name="nav-next" />
+      </button>
     </div>
   </div>
 </section>
