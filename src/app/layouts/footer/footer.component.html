@@ -1,78 +1,125 @@
-<footer aria-label="Infynex Solution footer">
+<footer aria-label="Infynex Solution footer" class="site-footer">
   <div class="wrap">
     <div class="footer-grid">
       <!-- Column 1: Company Info -->
       <div class="footer-col footer-about">
-        <a
-          href="#home"
-          class="brand"
-          style="margin-bottom: 12px; display: inline-block;"
-          aria-label="Infynex Solution Home"
-        >
-          <img src="assets/White.png" alt="Infynex Solution Logo" class="footer-logo" />
-        </a>
-        <p>
+        <div class="footer-brand-header">
+          <a
+            href="#home"
+            class="brand"
+            aria-label="Infynex Solution Home"
+          >
+            <img src="assets/White.png" alt="Infynex Solution Logo" class="footer-logo" />
+          </a>
+          <button 
+            type="button" 
+            class="back-to-top-btn" 
+            (click)="scrollToTop()" 
+            aria-label="Scroll back to top"
+            title="Scroll back to top"
+          >
+            <span>Top</span>
+            <span class="arrow-up" aria-hidden="true">↑</span>
+          </button>
+        </div>
+
+        <div class="brand-status-pill">
+          <span class="status-dot"></span>
+          <span>Available for New Projects</span>
+        </div>
+
+        <p class="about-desc">
           Based in Ahmedabad, Infynex Solution is a premier IT, web development, and digital
           marketing agency dedicated to scaling businesses globally.
         </p>
       </div>
 
       <!-- Column 2: Quick Links -->
-      <nav class="footer-col" aria-label="Quick links">
-        <div class="foot-title">Quick Links</div>
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#about">About Us</a></li>
-          <li><a href="#contact">Contact Us</a></li>
-          <li><a href="#blog">Blog</a></li>
+      <nav class="footer-col footer-nav-col" aria-label="Quick links">
+        <div class="foot-title">
+          <span class="title-dot"></span>
+          <span>Quick Links</span>
+        </div>
+        <ul class="foot-nav-list">
+          <li><a href="#home"><span class="nav-arrow" aria-hidden="true">›</span><span>Home</span></a></li>
+          <li><a href="#services"><span class="nav-arrow" aria-hidden="true">›</span><span>Services</span></a></li>
+          <li><a href="#portfolio"><span class="nav-arrow" aria-hidden="true">›</span><span>Portfolio</span></a></li>
+          <li><a href="#about"><span class="nav-arrow" aria-hidden="true">›</span><span>About Us</span></a></li>
+          <li><a href="#contact"><span class="nav-arrow" aria-hidden="true">›</span><span>Contact Us</span></a></li>
+          <li><a href="#blog"><span class="nav-arrow" aria-hidden="true">›</span><span>Blog</span></a></li>
         </ul>
       </nav>
 
       <!-- Column 3: Contact Information -->
       <address class="footer-col footer-contact-col">
-        <div class="foot-title">Contact Info</div>
-        <div class="foot-contact-item">
-          <div class="foot-contact-icon">
-            <app-icon name="phone" />
-          </div>
-          <div>
-            <b>Phone</b>
-            <span>+91 9824253581</span>
-          </div>
+        <div class="foot-title">
+          <span class="title-dot"></span>
+          <span>Contact Info</span>
         </div>
-        <div class="foot-contact-item">
-          <div class="foot-contact-icon">
-            <app-icon name="email" />
-          </div>
-          <div>
-            <b>Email</b>
-            <span>dhavalnandavana&#64;gmail.com</span>
-          </div>
-        </div>
-        <div class="foot-contact-item">
-          <div class="foot-contact-icon">
-            <app-icon name="address" />
-          </div>
-          <div>
-            <b>Address</b>
-            <span>Ahmedabad, Gujarat, India</span>
-          </div>
+        <div class="contact-card-list">
+          <a 
+            href="tel:+919824253581" 
+            class="foot-contact-item" 
+            aria-label="Call Infynex Solution at +91 9824253581"
+          >
+            <div class="foot-contact-icon">
+              <app-icon name="phone" />
+            </div>
+            <div class="contact-text-wrap">
+              <b>Phone</b>
+              <span>+91 9824253581</span>
+            </div>
+            <span class="contact-action-hint" aria-hidden="true">Call ↗</span>
+          </a>
+
+          <a 
+            href="mailto:dhavalnandavana@gmail.com" 
+            class="foot-contact-item" 
+            aria-label="Email Infynex Solution at dhavalnandavana@gmail.com"
+          >
+            <div class="foot-contact-icon">
+              <app-icon name="email" />
+            </div>
+            <div class="contact-text-wrap">
+              <b>Email</b>
+              <span>dhavalnandavana&#64;gmail.com</span>
+            </div>
+            <span class="contact-action-hint" aria-hidden="true">Mail ↗</span>
+          </a>
+
+          <a 
+            href="https://maps.google.com/?q=Ahmedabad,+Gujarat,+India" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="foot-contact-item" 
+            aria-label="View Infynex Solution office in Ahmedabad, Gujarat, India on Google Maps"
+          >
+            <div class="foot-contact-icon">
+              <app-icon name="address" />
+            </div>
+            <div class="contact-text-wrap">
+              <b>Address</b>
+              <span>Ahmedabad, Gujarat, India</span>
+            </div>
+            <span class="contact-action-hint" aria-hidden="true">Map ↗</span>
+          </a>
         </div>
       </address>
 
       <!-- Column 4: Follow Us / Social -->
-      <div class="footer-col">
-        <div class="foot-title">Follow Us</div>
-        <div class="social-row">
+      <div class="footer-col footer-social-col">
+        <div class="foot-title">
+          <span class="title-dot"></span>
+          <span>Follow Us</span>
+        </div>
+        <div class="social-tray">
           <a
             href="https://www.facebook.com/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Facebook"
             title="Facebook"
-            class="social-facebook"
+            class="social-btn social-facebook"
           >
             <app-icon name="social-facebook" role="img" />
           </a>
@@ -82,7 +129,7 @@
             rel="noopener noreferrer"
             aria-label="Instagram"
             title="Instagram"
-            class="social-instagram"
+            class="social-btn social-instagram"
           >
             <app-icon name="social-instagram" role="img" />
           </a>
@@ -92,7 +139,7 @@
             rel="noopener noreferrer"
             aria-label="LinkedIn"
             title="LinkedIn"
-            class="social-linkedin"
+            class="social-btn social-linkedin"
           >
             <app-icon name="social-linkedin" role="img" />
           </a>
@@ -102,20 +149,24 @@
             rel="noopener noreferrer"
             aria-label="Twitter (X)"
             title="Twitter (X)"
-            class="social-twitter"
+            class="social-btn social-twitter"
           >
             <app-icon name="social-twitter" role="img" />
           </a>
         </div>
-        <div class="foot-title" style="margin-top: clamp(24px, 2.6vw, 40px)">Also Find Us On</div>
-        <div class="social-row">
+
+        <div class="foot-title foot-sub-title">
+          <span class="title-dot"></span>
+          <span>Also Find Us On</span>
+        </div>
+        <div class="social-tray freelance-tray">
           <a
             href="https://www.behance.net/infynexsolution"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Behance"
             title="Behance"
-            class="social-behance"
+            class="social-btn social-behance"
           >
             <app-icon name="social-behance" role="img" />
           </a>
@@ -125,7 +176,7 @@
             rel="noopener noreferrer"
             aria-label="Dribbble"
             title="Dribbble"
-            class="social-dribbble"
+            class="social-btn social-dribbble"
           >
             <app-icon name="social-dribbble" role="img" />
           </a>
@@ -135,7 +186,7 @@
             rel="noopener noreferrer"
             aria-label="Pinterest"
             title="Pinterest"
-            class="social-pinterest"
+            class="social-btn social-pinterest"
           >
             <app-icon name="social-pinterest" role="img" />
           </a>
@@ -145,7 +196,7 @@
             rel="noopener noreferrer"
             aria-label="Fiverr"
             title="Fiverr"
-            class="social-fiverr"
+            class="social-btn social-fiverr"
           >
             <app-icon name="social-fiverr" role="img" />
           </a>
@@ -155,20 +206,27 @@
             rel="noopener noreferrer"
             aria-label="Upwork"
             title="Upwork"
-            class="social-upwork"
+            class="social-btn social-upwork"
           >
             <app-icon name="social-upwork" role="img" />
           </a>
         </div>
       </div>
     </div>
+
+    <!-- Footer Bottom Bar -->
     <div class="foot-bottom">
-      <span>&copy; {{ currentYear }} Infynex Solution. All Rights Reserved.</span>
-      <div class="legal-links">
-        <a (click)="openModal('privacy')" class="legal-link">Privacy Policy</a>
-        <a (click)="openModal('terms')" class="legal-link">Terms and Conditions</a>
+      <div class="foot-copy-wrap">
+        <span>&copy; {{ currentYear }} Infynex Solution. All Rights Reserved.</span>
       </div>
-      <span class="foot-tagline">Building Your Complete Digital Ecosystem.</span>
+      <div class="legal-links">
+        <button type="button" (click)="openModal('privacy')" class="legal-pill-btn">Privacy Policy</button>
+        <span class="legal-sep" aria-hidden="true">•</span>
+        <button type="button" (click)="openModal('terms')" class="legal-pill-btn">Terms and Conditions</button>
+      </div>
+      <div class="foot-tagline-wrap">
+        <span class="foot-tagline">Building Your Complete Digital Ecosystem.</span>
+      </div>
     </div>
   </div>
 </footer>
